@@ -1,0 +1,17 @@
+C:\Users\salma\source\repos\CoreDemo\Bussiness\bin\Debug\net5.0\Bussiness.deps.json
+C:\Users\salma\source\repos\CoreDemo\Bussiness\bin\Debug\net5.0\Bussiness.dll
+C:\Users\salma\source\repos\CoreDemo\Bussiness\bin\Debug\net5.0\Bussiness.pdb
+C:\Users\salma\source\repos\CoreDemo\Bussiness\obj\Debug\net5.0\Bussiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\salma\source\repos\CoreDemo\Bussiness\obj\Debug\net5.0\Bussiness.AssemblyInfoInputs.cache
+C:\Users\salma\source\repos\CoreDemo\Bussiness\obj\Debug\net5.0\Bussiness.AssemblyInfo.cs
+C:\Users\salma\source\repos\CoreDemo\Bussiness\obj\Debug\net5.0\Bussiness.csproj.CoreCompileInputs.cache
+C:\Users\salma\source\repos\CoreDemo\Bussiness\obj\Debug\net5.0\Bussiness.dll
+C:\Users\salma\source\repos\CoreDemo\Bussiness\obj\Debug\net5.0\refint\Bussiness.dll
+C:\Users\salma\source\repos\CoreDemo\Bussiness\obj\Debug\net5.0\Bussiness.pdb
+C:\Users\salma\source\repos\CoreDemo\Bussiness\obj\Debug\net5.0\ref\Bussiness.dll
+C:\Users\salma\source\repos\CoreDemo\Bussiness\bin\Debug\net5.0\DataAccess.dll
+C:\Users\salma\source\repos\CoreDemo\Bussiness\bin\Debug\net5.0\Entity.dll
+C:\Users\salma\source\repos\CoreDemo\Bussiness\bin\Debug\net5.0\DataAccess.pdb
+C:\Users\salma\source\repos\CoreDemo\Bussiness\bin\Debug\net5.0\Entity.pdb
+C:\Users\salma\source\repos\CoreDemo\Bussiness\obj\Debug\net5.0\Bussiness.csproj.AssemblyReference.cache
+C:\Users\salma\source\repos\CoreDemo\Bussiness\obj\Debug\net5.0\Bussiness.csproj.Up2Date

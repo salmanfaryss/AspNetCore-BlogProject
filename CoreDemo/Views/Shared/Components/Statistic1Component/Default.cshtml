@@ -1,0 +1,101 @@
+﻿<div class="row">
+    <div class="col-lg-3">
+        <div class="widget style1">
+            <div class="row">
+                <div class="col-4 text-center">
+                    <i class="fa fa-trophy fa-5x"></i>
+                </div>
+                <div class="col-8 text-right">
+                    <span> Toplam Görüntülenme </span>
+                    <h2 class="font-bold"> @ViewBag.TotalViews</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="widget style1 navy-bg">
+            <div class="row">
+                <div class="col-4">
+                    <i class="fa fa-cloud fa-5x"></i>
+                </div>
+                <div class="col-8 text-right">
+                    <span> Today degrees </span>
+                    <h2 class="font-bold">26'C</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="widget style1 lazur-bg">
+            <div class="row">
+                <div class="col-4">
+                    <i class="fa fa-envelope-o fa-5x"></i>
+                </div>
+                <div class="col-8 text-right">
+                    <span> Yeni Yorumlar </span>
+                    <h2 class="font-bold">@ViewBag.NewsComments</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="widget style1 yellow-bg">
+            <div class="row">
+                <div class="col-4">
+                    <i class="fa fa-music fa-5x"></i>
+                </div>
+                <div class="col-8 text-right">
+                    <span> Bugünkü Blog Sayısı  </span>
+                    <h2 class="font-bold">@ViewBag.TodayBlogCount</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="widget navy-bg no-padding">
+            <div class="p-m">
+                <h1 class="m-xs">@ViewBag.TotalBlogCount</h1>
+
+                <h3 class="font-bold no-margins">
+                    Toplam Blog Sayısı
+                </h3>
+                <small>Sistemde kayıtlı tüm bloglar.</small>
+            </div>
+            <div class="flot-chart">
+                <div class="flot-chart-content" id="flot-chart1"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="widget lazur-bg no-padding">
+            <div class="p-m">
+                <h1 class="m-xs">@ViewBag.MonthBlogContent</h1>
+
+                <h3 class="font-bold no-margins">
+                    Aylık Eklenen Blog
+                </h3>
+                <small>Bu ay eklenen içerikler.</small>
+            </div>
+            <div class="flot-chart">
+                <div class="flot-chart-content" id="flot-chart2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="widget yellw-bg no-padding">
+            <div class="p-m">
+                <h1 class="m-xs">@ViewBag.TrueBlogCount</h1>
+
+                <h3 class="font-bold no-margins">
+                    Toplam Okunma
+                </h3>
+                <small>Tüm blogların görüntülenmesi.</small>
+            </div>
+            <div class="flot-chart">
+                <div class="flot-chart-content" id="flot-chart3"></div>
+            </div>
+        </div>
+    </div>
+</div>

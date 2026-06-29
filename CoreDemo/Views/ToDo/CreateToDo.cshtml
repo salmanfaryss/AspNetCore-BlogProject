@@ -1,0 +1,34 @@
+﻿@model Entity.Concrete.ToDo
+@{
+    ViewData["Title"] = "CreateToDo";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Görev Eklemek  Sayfası</h4>
+            <p class="card-description"> Yeni Görev Ekleme Sayfası </p>
+            @using (Html.BeginForm("CreateToDo", "ToDo", FormMethod.Post))
+            {
+
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Görev Başlığı</label>
+                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                </div>
+              
+
+                <div class="form-group">
+                    <label for="exampleTextarea1">Blog içerik</label>
+
+                    <textarea class="form-control" name="Description" rows="20"></textarea>
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Kaydet</button>
+
+            }
+        </div>
+    </div>
+</div>
+

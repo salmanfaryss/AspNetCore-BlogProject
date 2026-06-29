@@ -1,0 +1,79 @@
+﻿@using Entity.Concrete
+@model List<Message2>
+<div class="col-md-8">
+    <div class="ibox ">
+        <div class="ibox-title">
+            <h5>Activites</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-wrench"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li>
+                        <a href="#" class="dropdown-item">Config option 1</a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-item">Config option 2</a>
+                    </li>
+                </ul>
+                <a class="close-link">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content">
+
+            <div>
+                <div class="feed-activity-list">
+
+                    @foreach(var item in Model)
+                    {
+                        var timeSpan = DateTime.Now - item.Date;
+                        var result = "";
+                        if (timeSpan.TotalMinutes < 1)
+                        {
+                            result = "Şimdi";
+                        }
+                        else if (timeSpan.TotalMinutes < 60)
+                        {
+                            result = $"{(int)timeSpan.TotalMinutes} dk";
+                        }
+                        else if (timeSpan.TotalHours < 24)
+                        {
+                            result = $"{(int)timeSpan.TotalHours} saat";
+                        }
+                        else
+                        {
+                            result = $"{(int)timeSpan.TotalDays} gün";
+                        }
+                        <div class="feed-element">
+                            <a href="#" class="float-left">
+                                <img alt="image" class="rounded-circle" src="@item.SenderUser.WriterImage">
+                            </a>
+                            <div class="media-body ">
+                                <small class="float-right text-navy">@result</small>
+                                <strong>@item.SenderUser?.WriterName</strong>  sana mesaj Gönderdi <strong>@item.ReceiverUser?.WriterName</strong>. <br>
+                                <small class="text-muted">@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</small>
+                                <div class="actions">
+                                    <a href="" class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                                    <a href="" class="btn btn-xs btn-danger"><i class="fa fa-heart"></i> Love</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                   
+
+                 
+                </div>
+
+                <button class="btn btn-primary btn-block m"><i class="fa fa-arrow-down"></i> Show More</button>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

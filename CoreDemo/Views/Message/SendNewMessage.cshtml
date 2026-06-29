@@ -1,0 +1,39 @@
+﻿@using Entity.Concrete
+@model Message2
+@{
+    ViewData["Title"] = "SendNewMessage";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Message Yazma Sayfası Sayfası</h4>
+            <p class="card-description"> Mesaj Okuma Sayfası </p>
+
+
+           @using(Html.BeginForm("SendNewMessage","Message",FormMethod.Post)){
+            <div class="form-group">
+                <label for="exampleInputName1">Alıcı Seçimi </label>
+                @Html.DropDownListFor(x => x.ReceiverID, (List<SelectListItem>)ViewBag.receiverUser, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputName1">Konu </label>
+                @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputName1">Mesaj </label>
+                @Html.TextAreaFor(x => x.Content, 15, 3, new { @class = "form-control" })
+            </div>
+
+            <button type="submit" class="btn btn-gradient-primary mr-2">Gönder</button>
+            }
+
+
+        </div>
+    </div>
+</div>
+
+
+

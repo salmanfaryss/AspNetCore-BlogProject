@@ -1,0 +1,80 @@
+﻿@model UserSignUpViewModel
+@{
+    ViewData["Title"] = "CreateCompte";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<section class="main-content-w3layouts-agileits">
+	<div class="container">
+		<h3 class="tittle">Yazar Kayıt Sayfası</h3>
+		<div class="inner-sec">
+			<div class="login p-5 bg-light mx-auto mw-100">
+				@using (Html.BeginForm("CreateCompte", "Register", FormMethod.Post))
+				{
+					<div class="form-row">
+						<div class="col-md-6 mb-3">
+							<label for="validationCustom01">Adınız Soyadınız</label>
+							@* @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" }) *@
+							<span asp-validation-for="namesurname" class="text-danger"></span>
+							<input type="text" class="form-control" asp-for="namesurname" placeholder="Adınız soyadınız" >
+							
+						
+						</div>
+						<div class="col-md-6 mb-3">
+							<label for="validationCustom02">Mail Adresi</label>
+						@* 	@Html.TextBoxFor(x => x.Email, new { @class = "form-control" }) *@
+						    <span asp-validation-for="Email" class="text-danger"></span>
+							<input type="text" class="form-control" asp-for="Email" placeholder="Adınız soyadınız" >
+							
+						</div>
+						<div class="col-md-6 mb-3">
+							<label for="validationCustom02">Kullanıcı Adi</label>
+							<span asp-validation-for="UserName" class="text-danger"></span>
+							<input type="text" class="form-control" asp-for="UserName" placeholder="Adınız soyadınız" >
+
+						</div>
+						<div class="col-md-6 mb-3">
+							<label for="validationCustom02">Şifre</label>
+							<span asp-validation-for="Password" class="text-danger"></span>
+							<input type="text" class="form-control" asp-for="Password" placeholder="Adınız soyadınız">
+
+						</div>
+						<div class="col-md-12 mb-3">
+							<label for="validationCustom02">Şifre Tekrar</label>
+							<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+							<input type="text" class="form-control" asp-for="ConfirmPassword" placeholder="Adınız soyadınız" >
+
+						</div>
+						
+					</div>
+				
+					<button type="submit" class="btn btn-primary submit mb-4">Kayıt Ol</button>
+
+					<div class="text-danger" asp-validation-summary="ModelOnly">
+
+					</div>
+					<p>
+						<a href="#" id="btn1">Tüm Şartlar okudum ve kabul ediyorum</a>
+					</p>
+				}
+
+			</div>
+		</div>
+	</div>
+	<br /><br />
+	
+	<script>
+			$('#btn1').click(function () {
+				swal(`
+
+		Bu platformu kullanmadan önce sunulan tüm şartlar ve koşulları dikkatlice okuduğumu, anladığımı ve kabul ettiğimi beyan ederim.
+
+		Platform üzerinde gerçekleştireceğim tüm işlemlerin sorumluluğunun bana ait olduğunu kabul ederim.
+
+				`);
+			});
+	</script>
+</section>

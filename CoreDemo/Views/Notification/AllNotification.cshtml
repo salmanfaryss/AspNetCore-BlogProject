@@ -1,0 +1,83 @@
+﻿@using Entity.Concrete
+@model List<Notification>
+@{
+    ViewData["Title"] = "AllNotification";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title"> Bildirim Sayfası </h3>
+            
+        </div>
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Bildirim Sayfası</h4>
+                        
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Bildirim Typi</th>
+                                    <th>Bildirim Symbolu</th>
+                                    <th>Bildirim içeriği</th>
+                                    <th>Tarih</th>
+                                    <th>Durumu</th>
+                                    <th>Oku</th>
+                                    <
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+
+                                    foreach (var item in Model)
+                                    {
+                                        string text = "";
+                                        string color = "";
+                                        if (item.Status == true)
+                                        {
+                                            text = "Okundu";
+                                            color = "badge badge-success";
+                                        }
+                                        else
+                                        {
+                                            text = "Okunmadı";
+                                            color = "badge badge-danger";
+                                        }
+                                        <tr>
+                                            <td>@item.NotificationID</td>
+                                            <td>@item.NotificationType</td>
+                                            <td><i class="@item.NotificationSymbole"></i></td>
+                                            @* <td>@item.NotificationSymbole</td> *@
+                                            <td>@item.NotificationContent</td>
+
+                                            <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+           
+                                            <td><label class="@color">@text</label></td>
+                                            <td> <a href="/Notification/ReadNotification/@item.NotificationID" class="btn btn-gradient-warning btn-rounded btn-fw">Devamın Oku</a>  </td>
+                                           
+                                        </tr>
+                                    }
+                                }
+
+
+
+                            </tbody>
+                        </table>
+                        <br />
+                        <a href="/Create/CreateNotification/" class="btn btn-gradient-primary btn-rounded btn-fw"> Yeni Blog Oluştur </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    @await Component.InvokeAsync("WriterPanelFooterComponent")
+    <!-- partial -->
+</div>
+

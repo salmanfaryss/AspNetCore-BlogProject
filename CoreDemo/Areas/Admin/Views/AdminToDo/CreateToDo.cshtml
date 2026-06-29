@@ -1,0 +1,35 @@
+﻿@model Entity.Concrete.ToDo
+@{
+    ViewData["Title"] = "CreateToDo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Görev Ekleme Sayfası</h4>
+            <p class="card-description"> Yeni Görev Ekleme Sayfası </p>
+            @using (Html.BeginForm("CreateToDo", "AdminToDo", FormMethod.Post))
+            {
+
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Başlık</label>
+                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleTextarea1">Açıklama</label>
+
+                    <textarea class="form-control" name="Description" rows="20"></textarea>
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Oluştur</button>
+
+            }
+        </div>
+    </div>
+</div>
+
+

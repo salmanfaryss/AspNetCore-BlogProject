@@ -1,0 +1,60 @@
+﻿@model Entity.Concrete.Writer
+@{
+    ViewData["Title"] = "CreateWriter";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yazar Profile Bilgileri Düzenleme Sayfası</h4>
+            <p class="card-description"> Yazar Profile Bilgileri Düzenleme Sayfası </p>
+            @using (Html.BeginForm("CreateWriter", "Writer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+
+               @*  @Html.HiddenFor(x => x.WriterID)
+ *@
+                <div class="form-group">
+                    <label for="exampleInputName1">Yazar Adı </label>
+                    @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+                </div>
+
+              @*   <div class="form-group">
+                    <label for="exampleInputEmail3">Yazar Mail Adresi</label>
+                    @Html.TextBoxFor(x => x.WriterEmail, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Yazar Şifre </label>
+                    @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
+                </div> *@
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Yazar Resimi</label>
+                    <input type="file" name="WriterImage" />
+                   @*  @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" }) *@
+                    @* <label>File upload</label>
+                    <input type="file" name="WriterImage" class="file-upload-default"> *@
+                    @* <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                        <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-gradient-primary" type="button">Yükle</button>
+                        </span>
+                    </div> *@
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleTextarea1">Yazar Hakkında</label>
+                    @Html.TextAreaFor(x => x.WriterAbout, 15, 3, new { @class = "form-control" })
+                    @* <textarea class="form-control" name="BlogContent" rows="4"></textarea> *@
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Kaydet</button>
+
+            }
+        </div>
+    </div>
+</div>
+
+
+

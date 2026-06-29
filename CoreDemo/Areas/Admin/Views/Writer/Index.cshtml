@@ -1,0 +1,55 @@
+﻿@using Entity.Concrete
+@model List<Writer>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-9">
+        <h2>Yazarlar</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Ana sayfa</a>
+            </li>
+            <li class="breadcrumb-item">
+                App Views
+            </li>
+            <li class="breadcrumb-item active">
+                <strong>Yazarlar</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4">
+                <div class="contact-box">
+
+                    <a class="row" href="/Admin/Writer/WriterDetail/@item.WriterID">
+                        <div class="col-4">
+                            <div class="text-center">
+                                <img alt="image" class="rounded-circle m-t-xs img-fluid" src="@item.WriterImage">
+                                <div class="m-t-xs font-bold">@item.WriterAbout</div>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <h3><strong>@item.WriterName</strong></h3>
+                            <p><i class="fa fa-map-marker"></i> Istanbul/Türkiye </p>
+                          @*   <address>
+                                <strong>@item.WriterEmail.</strong><br>
+                               @item.WriterAdres
+                               <br>
+                                <abbr title="Phone">P:</abbr> (90) 456-7890
+                            </address> *@
+                        </div>
+                    </a>
+                
+              
+            </div>
+        </div>
+        }
+    </div>
+</div>

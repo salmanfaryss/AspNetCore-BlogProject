@@ -1,0 +1,64 @@
+﻿@using Entity.Concrete
+@model List<Notification>
+<li class="nav-item dropdown">
+    <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+        <i class="mdi mdi-bell-outline"></i>
+        <span class="count-symbol bg-danger"></span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+        <h6 class="p-3 mb-0">Bildirimler</h6>
+        <div class="dropdown-divider"></div>
+         @foreach(var item in Model)
+            {
+            string type = "";
+            if (item.NotificationType == "Yorum")
+            {
+                type = "mdi mdi-comment";
+            }
+            if (item.NotificationType == "Kategori")
+            {
+                type = "mdi mdi-file";
+            }
+            if (item.NotificationType == "Güncelleme")
+            {
+                type = "mdi mdi-update";
+            }
+            if (item.NotificationType == "Duyuru")
+            {
+                type = "mdi mdi-bullhorn";
+            }
+            if (item.NotificationType == "Yeni Blog")
+            {
+                type = "mdi mdi-notebook";
+            }
+            if(item.NotificationType == "Kullanici")
+            {
+                type = "mdi mdi-account-plus";
+            }
+            if (item.NotificationType == "Mesaj")
+            {
+                type = "mdi mdi-email";
+            }
+            if (item.NotificationType == "Güvenlik")
+            {
+                type = "mdi mdi-shield-check";
+            }
+            <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+                <div class="preview-icon bg-success">
+                    <i class="@type"></i>
+                </div>
+            </div>
+           
+                <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">@item.NotificationType</h6>
+                    <p class="text-gray ellipsis mb-0">@item.NotificationContent.Substring(0,5)  </p>
+                </div>
+            
+           
+        </a>
+        }
+       
+        <h6 class="p-3 mb-0 text-center">Tümünü Gör</h6>
+    </div>
+</li>

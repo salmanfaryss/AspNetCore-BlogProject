@@ -1,0 +1,78 @@
+﻿@using Entity.Concrete
+@model Writer
+@{
+    ViewData["Title"] = "WriterDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Profile</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a>Extra Pages</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <strong>Profile</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+        <div class="col-md-4">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Profile Bilgileri</h5>
+                </div>
+                <div>
+                    <div class="ibox-content no-padding border-left-right">
+                        <img alt="image" class="img-fluid" src="@Model.WriterImage">
+                    </div>
+                    <div class="ibox-content profile-content">
+                        <h4><strong>@Model.WriterName</strong></h4>
+                        <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
+                        <h5>
+                            Hakkımda
+                        </h5>
+                        <strong>
+                           @Model.WriterAboutDetail
+                        </strong>
+                        <div class="row m-t-lg">
+                            <div class="col-md-4">
+                                <span class="bar">5,3,9,6,5,9,7,3,5,2</span>
+                                <h5><strong>5</strong> Blog</h5>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="line">5,3,9,6,5,9,7,3,5,2</span>
+                                <h5><strong>8</strong> mesajlar</h5>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="bar">5,3,2,-1,-3,-2,2,3,5,2</span>
+                                <h5><strong>20</strong> Followers</h5>
+                            </div>
+                        </div>
+                        <div class="user-button">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Send Message</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-default btn-sm btn-block"><i class="fa fa-coffee"></i> Buy a coffee</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @await Component.InvokeAsync("WriterActiviteComponent")
+       
+    </div>
+</div>

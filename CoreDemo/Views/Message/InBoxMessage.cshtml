@@ -1,0 +1,101 @@
+﻿@using Entity.Concrete
+@model List<Message2>
+@{
+    ViewData["Title"] = "InBoxMessage";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title"> GelenMesajlar </h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Gelen Kutusu</h4>
+                        <p class="card-description">
+                            Add class <code>.table</code>
+                        </p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Gönderen Adi</th>
+                                    
+                                    <th>Konu</th>
+                                    <th>Mesaj</th>
+                                    <th>Tarih</th>
+                                    <th>Durumu</th>
+                                    <th>Mesaj Oku</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    string text = "";
+                                    string color = "";
+
+                                    foreach (var item in Model)
+                                    {
+                                        if (item.IsReady == true)
+                                        {
+                                            text = "Okundu";
+                                            color = "badge badge-success";
+                                        }
+                                        else
+                                        {
+                                            text = "Okunmadı";
+                                            color = "badge badge-danger";
+                                        }
+                                        <tr>
+                                            <td>@item.MessageID</td>
+                                            <td>@item.ReceiverUser.WriterName </td>
+                                            <td>@item.Subject </td>
+                                            <td>@item.Content.Substring(0,3) </td>
+                                            <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+                                            
+                                            <td><label class="@color">@text</label></td>
+                                            <td>
+                                                <a href="/Message/InboxDetail/@item.MessageID" class="btn btn-gradient-primary btn-icon-text">
+                                                    <i class="fa-solid fa-envelope-open btn-icon-prepend"></i> Aç
+                                                  
+                                                </a>
+                                            </td>
+                                         
+                                          
+                                        </tr>
+                                    }
+                                }
+
+
+
+                            </tbody>
+                        </table>
+                        <br /> <br />
+                        <a href="/Message/SendNewMessage/" class="btn btn-gradient-primary btn-icon-text">
+                            <i class="fa-solid fa-envelope-open btn-icon-prepend"></i> Yeni Message Oluştur
+
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    @await Component.InvokeAsync("WriterPanelFooterComponent")
+    <!-- partial -->
+</div>

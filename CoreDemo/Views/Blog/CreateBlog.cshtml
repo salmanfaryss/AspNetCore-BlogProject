@@ -1,0 +1,44 @@
+﻿@model Entity.Concrete.Blog
+@{
+    ViewData["Title"] = "CreateBlog";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yazarı Yeni Blog Ekleme Sayfası</h4>
+            <p class="card-description"> Yeni Blog Ekleme Sayfası </p>
+            @using (Html.BeginForm("CreateBlog", "Blog", FormMethod.Post))
+            {
+
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Blog Başlığı</label>
+                   @Html.TextBoxFor(x => x.BlogTitle, new {@class="form-control"})
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Blog Kategorisi</label>
+                    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.Category, new {@class ="form-control"})
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">BlogThumbnailImage</label>
+                    @Html.TextBoxFor(x => x.BlogThumbnailImage, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Blog Resimi</label>
+                    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+                </div>
+                
+               
+                <div class="form-group">
+                    <label for="exampleTextarea1">Blog içerik</label>
+                    
+                     <textarea class="form-control" name="BlogContent"  rows="20"></textarea> 
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Kaydet</button>
+                
+            }
+        </div>
+    </div>
+</div>

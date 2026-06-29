@@ -1,0 +1,12 @@
+C:\Users\salma\source\repos\CoreDemo\Entity\bin\Debug\net5.0\Entity.deps.json
+C:\Users\salma\source\repos\CoreDemo\Entity\bin\Debug\net5.0\Entity.dll
+C:\Users\salma\source\repos\CoreDemo\Entity\bin\Debug\net5.0\Entity.pdb
+C:\Users\salma\source\repos\CoreDemo\Entity\obj\Debug\net5.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\salma\source\repos\CoreDemo\Entity\obj\Debug\net5.0\Entity.AssemblyInfoInputs.cache
+C:\Users\salma\source\repos\CoreDemo\Entity\obj\Debug\net5.0\Entity.AssemblyInfo.cs
+C:\Users\salma\source\repos\CoreDemo\Entity\obj\Debug\net5.0\Entity.csproj.CoreCompileInputs.cache
+C:\Users\salma\source\repos\CoreDemo\Entity\obj\Debug\net5.0\Entity.dll
+C:\Users\salma\source\repos\CoreDemo\Entity\obj\Debug\net5.0\refint\Entity.dll
+C:\Users\salma\source\repos\CoreDemo\Entity\obj\Debug\net5.0\Entity.pdb
+C:\Users\salma\source\repos\CoreDemo\Entity\obj\Debug\net5.0\ref\Entity.dll
+C:\Users\salma\source\repos\CoreDemo\Entity\obj\Debug\net5.0\Entity.csproj.AssemblyReference.cache

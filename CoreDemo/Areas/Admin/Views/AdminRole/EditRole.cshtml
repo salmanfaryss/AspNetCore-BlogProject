@@ -1,0 +1,36 @@
+﻿@model CoreDemo.Areas.Admin.Models.RoleUpdateViewMode
+@{
+    ViewData["Title"] = "EditRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Role Düzenleme Sayfası</h4>
+            <p class="card-description"> Role Düzenleme Sayfası </p>
+
+            @using (Html.BeginForm("EditRole", "AdminRole", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.RoleId)
+                <br />
+                <div class="form-group">
+                    <label for="exampleInputName1">Role Başlık</label>
+                    @Html.TextBoxFor(x => x.RoleName, new { @class = "form-control" })
+                    
+                </div>
+
+
+                <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
+            }
+           
+           
+
+        </div>
+    </div>
+</div>
+
+
+

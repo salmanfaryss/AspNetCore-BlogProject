@@ -1,0 +1,110 @@
+﻿@using Entity.Concrete
+@model List<Blog>
+@{
+  
+
+
+}
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Son 10 Blog</h4>
+                <div class="table-responsive">
+                    <table class="col-12" >
+                        <thead>
+                            <tr>
+                               
+                                <th> Başlık </th>
+                                <th> Kategori </th>
+                                <th> Durumu </th>
+                                <th> Tarihi </th>
+                                <th> Detaylar </th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var item in Model)
+                            {
+                                string text = "";
+                                string statuscolor = "";
+                                string categoryColor = "";
+
+                                // 🎯 CATEGORY COLOR
+                                switch (item.Category.CategoryName?.Trim())
+                                {
+                                    case "Yazilim":
+                                        categoryColor = "badge badge-gradient-success";
+                                        break;
+
+                                    case "Teknoloji":
+                                    case "Egitim":
+                                        categoryColor = "badge badge-gradient-info";
+                                        break;
+
+                                    case "Seyahat":
+                                        categoryColor = "badge badge-gradient-primary";
+                                        break;
+
+                                    case "Saglik":
+                                        categoryColor = "badge badge-gradient-success";
+                                        break;
+
+                                    case "Finans":
+                                        categoryColor = "badge badge-gradient-warning";
+                                        break;
+
+                                    case "Spor":
+                                        categoryColor = "badge badge-gradient-danger";
+                                        break;
+
+                                    case "Oyun":
+                                        categoryColor = "badge badge-gradient-purple";
+                                        break;
+
+                                    case "Film & Dizi":
+                                        categoryColor = "badge badge-gradient-pink";
+                                        break;
+
+                                    case "Kisisel Gelisim":
+                                        categoryColor = "badge badge-gradient-warning";
+                                        break;
+
+                                    default:
+                                        categoryColor = "badge badge-gradient-secondary";
+                                        break;
+                                }
+
+        // 🎯 STATUS
+                          if (item.Status == true)
+                           {
+                             text = "Yayınladı";
+                             statuscolor = "badge badge-gradient-success";
+                           }
+                         else
+                        {
+                       text = "Yayınlamadı";
+                        statuscolor = "badge badge-gradient-danger";
+                    }
+                                <tr>
+                                    <td>
+                                        <img src="" class="mr-2" alt="image"> @item.BlogTitle
+                                    </td>
+                                  
+                                    <td> <label class="@categoryColor"> @item.Category.CategoryName</label> </td>
+                                    <td>
+                                        <label class="@statuscolor">@text</label>
+                                    </td>
+                                    <td> @(((DateTime)item.Date).ToString("dd-MMM-yyyy")) </td>
+                                    <td> <a href="/Blog/ReadMore/@item.BlogID" class="btn btn-gradient-dark btn-rounded btn-fw">Detaylar</a>  </td>
+                                    
+                                </tr>
+                            }
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

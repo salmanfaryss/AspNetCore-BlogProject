@@ -1,0 +1,45 @@
+﻿@model Entity.Concrete.Message2
+@{
+    ViewData["Title"] = "InboxDetail";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Mesaj Okuma Sayfası</h4>
+            <p class="card-description"> Mesaj Okuma Sayfası </p>
+            
+
+                @Html.HiddenFor(x => x.MessageID)
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Gönderen </label>
+                    @Html.TextBoxFor(x => x.SenderUser.WriterName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Konu </label>
+                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Mesaj </label>
+                    @Html.TextAreaFor(x => x.Content,15,3, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Tarih </label>
+                    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                </div>
+                <br />
+                <a href="/Message/InboxMessage/" class="btn btn-gradient-primary btn-icon-text">
+                <i class="fa-solid fa-arrow-right btn-icon-prepend"></i> Liste Dön
+
+                </a>
+              
+
+            
+        </div>
+    </div>
+</div>
+
+

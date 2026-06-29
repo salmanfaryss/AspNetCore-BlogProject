@@ -1,0 +1,141 @@
+﻿@using Entity.Concrete
+@model List<ToDo>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Static Tables</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+       
+
+      
+                
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                
+                <div class="row">
+                   
+                    <div class="col-lg-12">
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                <h5>Yapılacak  Listesi   </h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li>
+                                            <a href="#" class="dropdown-item">Config option 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                           @*  <th>Durum</th> *@
+                                            <th>Başlık</th>
+                                            <th>Açıklama</th>
+                                            <th>Oluşturma Tarihi</th>
+                                            <th>Güncelleme Tarihi</th>
+                                            <th>Tamamlama Tarihi</th>
+                                            <th>Teslim Edilme Tarihi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                @foreach(var item in Model)
+                                {
+                                    if(item.Status == false)
+                                    {
+                                        
+                                    }
+                                    <tr>
+                                        <td>1</td>
+                                       
+                                      @*   <td>
+                                            <span class="pie"
+                                                  data-color="@(item.Status ? "#1ab394" : "#ed5565")">
+                                                1,5
+                                            </span>
+                                        </td> *@
+                                        
+                                        <td>@item.Title</td>
+                                        <td>@item.Description</td>
+                                        <td>@(((DateTime)item.CreateDate).ToString("dd-MMM-yyyy"))</td>
+                                        <td>@(item.UpdateDate?.ToString("dd-MMM-yyyy") ?? "Güncellenmedi")</td>
+                                        <td>@(item.CompletedDate?.ToString("dd-MMM-yyyy") ?? "Tamamlanmadı")</td>
+                                        <td>@(item.DueDate?.ToString("dd-MMM-yyyy") ?? "Teslim edilmedi")</td>
+
+                                       @*  <td class="text-navy"> <i class="fa fa-level-up"></i> 40% </td> *@
+                                    </tr>
+                                }
+                               
+                                       
+                                    </tbody>
+                                </table>
+                                <br />
+                        <a href="/Admin/AdminToDo/CreateToDo/" class="btn btn-info btn-rounded">Yeni Görev Oluştur </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+         
+
+     @*    </div>
+    </div>
+ *@
+
+
+   @*  <script>
+        $(".pie").each(function () {
+
+            var color = $(this).data("color");
+
+            $(this).sparkline('html', {
+                type: 'pie',
+                sliceColors: [color, "#F5F5F5"]
+            });
+
+        });
+    </script>
+    *@
+</body>
+
+</html>
+

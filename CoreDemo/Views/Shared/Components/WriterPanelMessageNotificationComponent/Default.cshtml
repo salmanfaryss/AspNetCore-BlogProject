@@ -1,0 +1,45 @@
+﻿@using Entity.Concrete
+@model List<Message2>
+
+<li class="nav-item dropdown">
+    <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+        <i class="mdi mdi-email-outline"></i>
+        <span class="count-symbol bg-warning"></span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+        <h6 class="p-3 mb-0">Mesajlar</h6>
+        <div class="dropdown-divider"></div>
+        @foreach (var item in Model)
+        {
+            var timeSpan = DateTime.Now - item.Date;
+            var result = "";
+            if(timeSpan.TotalMinutes < 1)
+            {
+                result = "Şimdi";
+            }
+            else if(timeSpan.TotalMinutes < 60)
+            {
+                result = $"{(int)timeSpan.TotalMinutes} dk";
+            }
+            else if(timeSpan.TotalHours < 24)
+            {
+                result = $"{(int)timeSpan.TotalHours} saat";
+            }
+            else
+            {
+                result = $"{(int)timeSpan.TotalDays} gün";
+            }
+
+            <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                <img src="@item.SenderUser.WriterImage" alt="image" class="profile-pic">
+            </div>
+            <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                <h6 class="preview-subject ellipsis mb-1 font-weight-normal">@item.SenderUser.WriterName sana mesaj Gönderdi </h6>
+                <p class="text-gray mb-0"> @result </p>
+            </div>
+        </a>
+        }
+        <h6 class="p-3 mb-0 text-center">4 new messages</h6>
+    </div>
+</li>

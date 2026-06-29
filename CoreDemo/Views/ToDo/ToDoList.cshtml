@@ -1,0 +1,121 @@
+﻿@using Entity.Concrete
+@model List<ToDo>
+@{
+    ViewData["Title"] = "ToDoList";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title"> Yapılacak Listesi </h3>
+            
+        </div>
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yapılacak Listesi</h4>
+                        <p class="card-description">
+                            Add class <code>.table</code>
+                        </p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Başlık</th>
+
+                                    <th>Oluşturldu Tarihi</th>
+                                    <th>Guncelleme Tarihi</th>
+                                    <th>Açıklama</th>
+                                    <th>Öncelik</th>
+                                    <th>Durum</th>
+                                    <th>Tamamlama Tarihi</th>
+                                    <th>Teslim Tarihi</th>
+                                    <th>Incelle</th>
+                                    <th>Güncelle</th>
+                                    <th>Sil</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    foreach(var item in Model)
+                                    {
+                                       
+
+                                    <tr>
+                                            <td>@item.ToDoID</td>
+                                            <td>@item.Title </td>
+                                            <td>@item.CreateDate </td>
+                                            <td>@item.UpdateDate </td>
+                                            <td>@item.Description.Substring(0,10) </td>
+                                            <td>
+
+                                                @switch (item.Priority)
+                                                {
+                                                case PriorityLevel.Low:
+                                                <span class="badge badge-secondary">Düşük</span>
+                                                break;
+                                                case PriorityLevel.Medium:
+                                                <span class="badge badge-info">Orta</span>
+                                                break;
+                                                case PriorityLevel.High:
+                                                <span class="badge badge-warning">Yüksek</span>
+                                                break;
+                                                case PriorityLevel.Urgent:
+                                                <span class="badge badge-danger">Acil</span>
+                                                break;
+                                                }
+                                            </td>
+                                            <td>@item.Status </td>
+                                            <td> @(item.CompletedDate?.ToString("dd-MMM-yyyy") ?? "Henüz tamamlanmadı")  </td>
+                                            <td> @(item.DueDate?.ToString("dd-MMM-yyyy") ?? "Belirlenmedi")</td>
+
+                                           
+                                            <td>
+                                                <a href="/ToDo/Detail/@item.ToDoID" class="btn btn-gradient-primary btn-icon-text">
+                                                    <i class="fa-solid fa-envelope-open btn-icon-prepend"></i> Incelle
+
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="/ToDo/UpdateToDo/@item.ToDoID" class="btn btn-gradient-secondary btn-icon-text">
+                                                    Güncelle
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="" class="btn btn-gradient-danger btn-icon-text">
+                                                    Sil
+                                                </a>
+                                            </td>
+
+
+                                        </tr>
+                                    }
+                                }
+
+
+
+                            </tbody>
+                        </table>
+                        <br />
+                        <a href="/ToDo/CreateToDo/" class="btn btn-gradient-primary btn-icon-text">
+                            Yeni Görev Oluştur
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    @await Component.InvokeAsync("WriterPanelFooterComponent")
+    <!-- partial -->
+</div>
+

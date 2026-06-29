@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\salma\\source\\repos\\CoreDemo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EE289A7F-3095-4C87-8C8E-2FC91CA2A3E7}|CoreDemo\\CoreDemo.csproj|c:\\users\\salma\\source\\repos\\coredemo\\coredemo\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EE289A7F-3095-4C87-8C8E-2FC91CA2A3E7}|CoreDemo\\CoreDemo.csproj|solutionrelative:coredemo\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE289A7F-3095-4C87-8C8E-2FC91CA2A3E7}|CoreDemo\\CoreDemo.csproj|c:\\users\\salma\\source\\repos\\coredemo\\coredemo\\views\\blog\\bloglist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EE289A7F-3095-4C87-8C8E-2FC91CA2A3E7}|CoreDemo\\CoreDemo.csproj|solutionrelative:coredemo\\views\\blog\\bloglist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE289A7F-3095-4C87-8C8E-2FC91CA2A3E7}|CoreDemo\\CoreDemo.csproj|c:\\users\\salma\\source\\repos\\coredemo\\coredemo\\areas\\admin\\views\\admincomment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EE289A7F-3095-4C87-8C8E-2FC91CA2A3E7}|CoreDemo\\CoreDemo.csproj|solutionrelative:coredemo\\areas\\admin\\views\\admincomment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE289A7F-3095-4C87-8C8E-2FC91CA2A3E7}|CoreDemo\\CoreDemo.csproj|c:\\users\\salma\\source\\repos\\coredemo\\coredemo\\views\\message\\sendboxmessage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EE289A7F-3095-4C87-8C8E-2FC91CA2A3E7}|CoreDemo\\CoreDemo.csproj|solutionrelative:coredemo\\views\\message\\sendboxmessage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\salma\\source\\repos\\CoreDemo\\CoreDemo\\Views\\About\\Index.cshtml",
+              "RelativeDocumentMoniker": "CoreDemo\\Views\\About\\Index.cshtml",
+              "ToolTip": "C:\\Users\\salma\\source\\repos\\CoreDemo\\CoreDemo\\Views\\About\\Index.cshtml",
+              "RelativeToolTip": "CoreDemo\\Views\\About\\Index.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-29T04:38:48.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BlogList.cshtml",
+              "DocumentMoniker": "C:\\Users\\salma\\source\\repos\\CoreDemo\\CoreDemo\\Views\\Blog\\BlogList.cshtml",
+              "RelativeDocumentMoniker": "CoreDemo\\Views\\Blog\\BlogList.cshtml",
+              "ToolTip": "C:\\Users\\salma\\source\\repos\\CoreDemo\\CoreDemo\\Views\\Blog\\BlogList.cshtml",
+              "RelativeToolTip": "CoreDemo\\Views\\Blog\\BlogList.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-29T04:37:00.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\salma\\source\\repos\\CoreDemo\\CoreDemo\\Areas\\Admin\\Views\\AdminComment\\Index.cshtml",
+              "RelativeDocumentMoniker": "CoreDemo\\Areas\\Admin\\Views\\AdminComment\\Index.cshtml",
+              "ToolTip": "C:\\Users\\salma\\source\\repos\\CoreDemo\\CoreDemo\\Areas\\Admin\\Views\\AdminComment\\Index.cshtml",
+              "RelativeToolTip": "CoreDemo\\Areas\\Admin\\Views\\AdminComment\\Index.cshtml",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAuwFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-29T04:19:25.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SendBoxMessage.cshtml",
+              "DocumentMoniker": "C:\\Users\\salma\\source\\repos\\CoreDemo\\CoreDemo\\Views\\Message\\SendBoxMessage.cshtml",
+              "RelativeDocumentMoniker": "CoreDemo\\Views\\Message\\SendBoxMessage.cshtml",
+              "ToolTip": "C:\\Users\\salma\\source\\repos\\CoreDemo\\CoreDemo\\Views\\Message\\SendBoxMessage.cshtml",
+              "RelativeToolTip": "CoreDemo\\Views\\Message\\SendBoxMessage.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEIAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-29T04:14:30.707Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
